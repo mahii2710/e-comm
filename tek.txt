@@ -1,0 +1,95 @@
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       while(n-->0)
+       {long ans=0;
+           long a=sc.nextLong();
+           long b=sc.nextLong();
+           if(b%2==0)
+           ans=b-2;
+           else 
+           ans=b-1;
+           if(ans>=a)
+           System.out.println(ans);
+           else
+           System.out.println(a&b);
+           
+       }
+ 
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+      
+    
+        Scanner s = new Scanner(System.in);
+        int N = s.nextInt();
+        int vacin[]=new int[N];
+        int pcnt[]=new int[N];
+        int c=0,i,temp;
+ 
+        for (i = 0; i < N; i++) {
+            vacin[i]=s.nextInt();
+        }
+ 
+        for(i=0;i<N;i++){
+            pcnt[i]=s.nextInt();
+        }
+ 
+        for(i=0;i<N-1;i++){
+            for(int j=1;j<N-i-1;j++){
+                if(vacin[i]>vacin[j]){
+                   temp=vacin[i];
+                   vacin[i]=vacin[j];
+                   vacin[j]=temp;
+                }
+ 
+                if(pcnt[i]>pcnt[j]){
+                   temp=pcnt[i];
+                   pcnt[i]=pcnt[j];
+                   pcnt[j]=temp;
+                }
+            }
+ 
+        }
+        for(i=0;i<N;i++){
+            if(vacin[i]<pcnt[i]){
+                c++;
+            }
+        }
+ 
+        if(c>0)
+            System.out.println("No");
+        else
+            System.out.println("Yes");
+    }
+ 
+}
